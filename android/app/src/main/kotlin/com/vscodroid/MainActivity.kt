@@ -6626,7 +6626,7 @@ class MainActivity : AppCompatActivity() {
                 showLicenseTextsDialog()
             }
             .setNeutralButton(getString(R.string.licenses_source_code)) { _, _ ->
-                openInBrowser("https://github.com/rmyndharis/VSCodroid")
+                openInBrowser("https://github.com/${BuildConfig.RELEASES_REPO}")
             }
             .show()
     }

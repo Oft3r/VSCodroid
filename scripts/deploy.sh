@@ -69,7 +69,7 @@ echo "Launching VSCodroid..."
 # runs on every launch, so after the reinstall above the session would run on
 # dangling usr/bin symlinks and settings paths naming the old native library
 # directory.
-PKG="${PKG:-com.vscodroid.debug}"
+PKG="${PKG:-com.oft3r.vscodroid.debug}"
 adb shell am start -n "$PKG/com.vscodroid.SplashActivity"
 echo "  ✓ Launched $PKG"
 

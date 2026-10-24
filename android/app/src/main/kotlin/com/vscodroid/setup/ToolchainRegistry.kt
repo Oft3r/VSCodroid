@@ -1,6 +1,7 @@
 package com.vscodroid.setup
 
 import androidx.annotation.StringRes
+import com.vscodroid.BuildConfig
 import com.vscodroid.R
 
 /**
@@ -103,7 +104,7 @@ object ToolchainRegistry {
             // MB 0.7 MB short. 41,000,000 leaves 1.3 MB for a point release.
             estimatedSize = 41_000_000,
             downloadSize = 11_000_000,
-            downloadUrl = "https://github.com/rmyndharis/VSCodroid/releases/latest/download/toolchain_ruby.zip",
+            downloadUrl = "https://github.com/${BuildConfig.RELEASES_REPO}/releases/latest/download/toolchain_ruby.zip",
         ),
         ToolchainInfo(
             packName = "toolchain_java",
@@ -121,7 +122,7 @@ object ToolchainRegistry {
             // for a point release of openjdk-21, which Termux has made before.
             estimatedSize = 186_000_000,
             downloadSize = 64_000_000,
-            downloadUrl = "https://github.com/rmyndharis/VSCodroid/releases/latest/download/toolchain_java.zip",
+            downloadUrl = "https://github.com/${BuildConfig.RELEASES_REPO}/releases/latest/download/toolchain_java.zip",
         ),
         ToolchainInfo(
             packName = "toolchain_cpp",
@@ -142,7 +143,7 @@ object ToolchainRegistry {
             // The ZIP is 73,702,041 bytes.
             estimatedSize = 260_000_000,
             downloadSize = 74_000_000,
-            downloadUrl = "https://github.com/rmyndharis/VSCodroid/releases/latest/download/toolchain_cpp.zip",
+            downloadUrl = "https://github.com/${BuildConfig.RELEASES_REPO}/releases/latest/download/toolchain_cpp.zip",
         ),
     )
 
