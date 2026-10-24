@@ -107,6 +107,14 @@ val bundleNotices = tasks.register<Sync>("bundleNotices") {
     }
 }
 
+// Fork identity. The package name and the GitHub repository that serves the
+// toolchain packs, overridable with -Pvscodroid.applicationId= and
+// -Pvscodroid.releasesRepo= so an upstream merge never has to touch these lines.
+val forkApplicationId = providers.gradleProperty("vscodroid.applicationId")
+    .getOrElse("com.oft3r.vscodroid")
+val forkReleasesRepo = providers.gradleProperty("vscodroid.releasesRepo")
+    .getOrElse("Oft3r/VSCodroid")
+
 android {
     namespace = "com.vscodroid"
     // Compile against the newest platform, which the androidx libraries this app
@@ -135,7 +143,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.vscodroid"
+        applicationId = forkApplicationId
+        buildConfigField("String", "RELEASES_REPO", "\"$forkReleasesRepo\"")
         minSdk = 30
         // Held at 36 on purpose, and lint's OldTargetApi is answered rather than
         // ignored. Targeting 37 blocks local network access by default, so a dev

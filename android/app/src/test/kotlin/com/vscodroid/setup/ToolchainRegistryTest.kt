@@ -1,5 +1,6 @@
 package com.vscodroid.setup
 
+import com.vscodroid.BuildConfig
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
@@ -237,7 +238,7 @@ class ToolchainRegistryTest {
             assertEquals("toolchain_cpp", cpp!!.packName)
             assertEquals("C/C++", cpp.displayName)
             assertEquals(
-                "https://github.com/rmyndharis/VSCodroid/releases/latest/download/toolchain_cpp.zip",
+                "https://github.com/${BuildConfig.RELEASES_REPO}/releases/latest/download/toolchain_cpp.zip",
                 cpp.downloadUrl,
             )
         }

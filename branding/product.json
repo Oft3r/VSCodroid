@@ -73,8 +73,8 @@
     ],
     "telemetryOptIn": false,
     "enableTelemetry": false,
-    "reportIssueUrl": "https://github.com/rmyndharis/VSCodroid/issues/new",
-    "licenseUrl": "https://github.com/rmyndharis/VSCodroid/blob/main/LICENSE",
-    "serverLicenseUrl": "https://github.com/rmyndharis/VSCodroid/blob/main/LICENSE"
+    "reportIssueUrl": "https://github.com/Oft3r/VSCodroid/issues/new",
+    "licenseUrl": "https://github.com/Oft3r/VSCodroid/blob/main/LICENSE",
+    "serverLicenseUrl": "https://github.com/Oft3r/VSCodroid/blob/main/LICENSE"
   }
 }

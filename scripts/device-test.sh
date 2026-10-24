@@ -77,7 +77,7 @@ set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 APK_PATH="$ROOT_DIR/android/app/build/outputs/apk/debug/app-debug.apk"
-PKG="com.vscodroid.debug"
+PKG="${PKG:-com.oft3r.vscodroid.debug}"
 
 # ── Derived expectations ───────────────────────────────────────────
 # Every version this suite asserts is read from the tree rather than written
@@ -119,7 +119,8 @@ derive_toolchain_release_urls() {
     # other expectation above: these URLs are the only copy that matters, and a
     # second one in this file would be free to drift from it.
     sed -n 's/.*downloadUrl = "\(https:[^"]*\)".*/\1/p' \
-        "$ROOT_DIR/android/app/src/main/kotlin/com/vscodroid/setup/ToolchainRegistry.kt"
+        "$ROOT_DIR/android/app/src/main/kotlin/com/vscodroid/setup/ToolchainRegistry.kt" |
+        sed "s#\${BuildConfig.RELEASES_REPO}#${RELEASES_REPO:-Oft3r/VSCodroid}#"
 }
 
 derive_app_path() {

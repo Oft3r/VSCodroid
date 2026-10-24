@@ -41,7 +41,7 @@ VSCODE_VERSION="${VSCODE_VERSION:-$(cat "$ROOT_DIR/VSCODE_VERSION")}"
 # nothing read.
 VSCODE_COMMIT="${VSCODE_COMMIT:-$(cat "$ROOT_DIR/VSCODE_COMMIT")}"
 ARCH="${ARCH:-arm64}"
-REPO="${REPO:-rmyndharis/VSCodroid}"
+REPO="${REPO:-${GITHUB_REPOSITORY:-Oft3r/VSCodroid}}"
 
 TARBALL_NAME="vscode-reh-web-linux-$ARCH-$VSCODE_VERSION.tar.gz"
 TARBALL="$ROOT_DIR/server/$TARBALL_NAME"
